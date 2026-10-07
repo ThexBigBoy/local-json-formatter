@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ico.jpg">
+    <title>Local Developer Formatter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="logo">{ }</span>
+        <span>Local Developer Formatter</span>
+    </div>
+
+    <div class="privacy">
+        ● Offline / Local Only
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- MODE -->
+    <div class="tabs">
+        <button id="jsonModeBtn" class="tab active">
+            JSON Formatter
+        </button>
+
+        <button id="codeModeBtn" class="tab">
+            Code Beautifier
+        </button>
+    </div>
+
+    <!-- TOOLBAR -->
+    <section class="toolbar">
+
+        <label id="languageWrap" style="display:none;">
+            Language
+
+            <select id="language">
+                <option value="javascript">JavaScript</option>
+                <option value="typescript">TypeScript</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="xml">XML</option>
+                <option value="sql">SQL</option>
+                <option value="php">PHP</option>
+                <option value="csharp">C#</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="jbase">jBASE / MultiValue BASIC</option>
+                <option value="yaml">YAML</option>
+            </select>
+        </label>
+
+        <label>
+            Indent
+
+            <select id="indent">
+                <option value="2">2 spaces</option>
+                <option value="4">4 spaces</option>
+                <option value="tab">Tab</option>
+            </select>
+        </label>
+
+        <button id="formatBtn">
+            Format / Beautify
+        </button>
+
+        <button id="minifyBtn">
+            Minify / Compact
+        </button>
+
+        <button id="validateBtn" class="secondary">
+            Validate
+        </button>
+
+        <button id="treeBtn" class="secondary">
+            Tree View
+        </button>
+
+        <button id="clearBtn" class="ghost">
+            Clear
+        </button>
+
+    </section>
+
+    <!-- FILE TOOLBAR -->
+    <section class="filebar">
+
+        <button id="uploadBtn">
+            Open File
+        </button>
+
+        <input
+            id="fileInput"
+            type="file"
+            accept=".json,.js,.ts,.html,.htm,.css,.xml,.sql,.php,.cs,.java,.py,.basic,.yml,.yaml,.txt"
+            hidden
+        >
+
+        <button id="sampleBtn" class="ghost">
+            Load Sample
+        </button>
+
+        <button id="copyBtn" class="ghost">
+            Copy Output
+        </button>
+
+        <button id="downloadBtn" class="ghost">
+            Download
+        </button>
+
+        <span id="status">
+            Ready — your data stays in this browser.
+        </span>
+
+    </section>
+
+    <!-- EDITORS -->
+    <section class="workspace">
+
+        <div class="panel">
+
+            <div class="panel-head">
+                <span>Input</span>
+
+                <span id="charCount">
+                    0 chars
+                </span>
+            </div>
+
+            <textarea
+                id="input"
+                spellcheck="false"
+                placeholder="Paste JSON or source code here..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="panel-head">
+                <span>Output</span>
+
+                <span id="validState">
+                    —
+                </span>
+            </div>
+
+            <pre id="output"></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- JSON TREE -->
+    <section
+        id="treeSection"
+        class="tree-section hidden"
+    >
+
+        <div class="panel-head">
+
+            <span>
+                JSON Tree View
+            </span>
+
+            <button
+                id="closeTree"
+                class="ghost"
+            >
+                Close
+            </button>
+
+        </div>
+
+        <div id="tree" class="tree"></div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+    <section class="info">
+
+        <h2>
+            Private Developer Tools
+        </h2>
+
+        <p>
+            Formatting, validation, minification and file operations
+            run entirely inside your browser.
+            Your code is not uploaded to a server.
+        </p>
+
+        <div class="cards">
+
+            <div>
+                <b>🔒 Local Processing</b>
+                <br>
+                Your source code stays on your machine.
+            </div>
+
+            <div>
+                <b>🧹 Code Beautifier</b>
+                <br>
+                Format common programming and configuration languages.
+            </div>
+
+            <div>
+                <b>🧰 Developer Formats</b>
+                <br>
+                JSON, JS, TS, HTML, CSS, XML, SQL, PHP, C#, Java,
+                Python, jBASE and YAML.
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    No server • No API • No analytics • Offline capable
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
